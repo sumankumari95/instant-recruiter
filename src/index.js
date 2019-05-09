@@ -1,15 +1,19 @@
 import React from 'react';
-import express from 'express';
-import renderer from './helpers/renderer';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import Routes from './client/Routes';
+import reducer from './redux/reducers/initialReducer';
 
-const app = express();
+const store = createStore(reducer, {}, applyMiddleware(thunk));
 
-app.use(express.static('public'));
-
-app.get('*', (req, res) => {
-    res.send(renderer(req));
-});
-
-app.listen(4000, () => {
-    console.info('App listening on port 4000');
-})
+ReactDOM.render(
+    <Provider store={store}>
+        <BrowserRouter>
+            <Routes />
+        </BrowserRouter>
+    </Provider>
+, document.getElementById('root')
+);
