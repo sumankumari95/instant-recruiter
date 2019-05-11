@@ -10,10 +10,10 @@ import reducer from './redux/reducers/initialReducer';
 const store = createStore(reducer, {}, applyMiddleware(thunk));
 
 ReactDOM.render(
-    <Provider store={store}>
-        <BrowserRouter>
-            <Routes />
-        </BrowserRouter>
-    </Provider>
-, document.getElementById('root')
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById('root'),
 );
