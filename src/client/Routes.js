@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import App from './components/App';
+import LandingPage from './pages/LandingPage';
 
 const Routes = () => (
   <>
-    <Route exact path="/" component={App} />
+    <Route exact path="/" component={LandingPage} />
   </>
 );
 

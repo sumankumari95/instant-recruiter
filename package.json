@@ -4,21 +4,23 @@
   "description": "Internal project recruitment platform",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js",
+    "start": "npm run build:client && start:server",
+    "start:server": "babel-node src/server/index.js",
+    "build:client": "webpack --config webpack.config.js --watch",
     "lint": "eslint --ext .js . --fix"
   },
   "author": "Suman Kumari",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.5",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.13.0",
+    "config": "^3.1.0",
+    "cssnano": "^4.1.10",
+    "express": "^4.17.0",
+    "extracted-loader": "^1.0.7",
+    "ignore-styles": "^5.0.1",
+    "mini-css-extract-plugin": "^0.6.0",
     "nodemon": "^1.19.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
@@ -26,11 +28,21 @@
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "webpack": "^4.30.0",
-    "webpack-dev-server": "^3.3.1"
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
     "webpack-cli": "^3.3.1"
   }
 }

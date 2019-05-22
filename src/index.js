@@ -5,11 +5,11 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import Routes from './client/Routes';
-import reducer from './redux/reducers/initialReducer';
+import reducer from './redux/reducers';
 
 const store = createStore(reducer, {}, applyMiddleware(thunk));
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <Provider store={store}>
     <BrowserRouter>
       <Routes />
