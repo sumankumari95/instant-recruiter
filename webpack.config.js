@@ -1,7 +1,11 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development';
+const isProduction = mode === 'production';
+
 module.exports = {
+  mode,
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
@@ -27,20 +31,26 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader, {
+          'extracted-loader',
+          MiniCssExtractPlugin.loader,
+          {
             loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              modules: false,
-            },
-          }, 'postcss-loader'],
+          },
+          'postcss-loader',
+        ],
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].jpg',
+        },
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: isProduction ? 'style.[contenthash].[name].css' : '[name].css',
     }),
   ],
 };

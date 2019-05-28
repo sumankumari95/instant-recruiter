@@ -1,5 +1,4 @@
 import 'ignore-styles';
-import path from 'path';
 import express from 'express';
 import renderer from '../helpers/renderer';
 
@@ -9,7 +8,7 @@ const PORT = process.env.PORT || 4000;
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 app.get('*', (req, res) => {
   const store = createStore();

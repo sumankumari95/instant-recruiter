@@ -14,19 +14,14 @@ export default (req, store) => {
     </Provider>,
   );
 
-  return `
-  <html>
+  return `<html>
     <head>
-        <meta charset="text/html;charset=utf-8" http-equiv="Content-Type">
-        <meta charset="utf-8" http-equiv="encoding">
-        <meta name="viewport" content="width=device-width, initialScale=1, shrink-to-fit=yes">
-        <link href="main.css" rel="stylesheet"s>
+        <link rel="stylesheet" type="text/css" href="Main.css" />
         <title>Instant Recruiter</title>
     </head>
     <body>
         <div id="root">${content}</div>
-        <script src="bundle.js"></script>
+        <script type="text/js" src="bundle.js"></script>
     </body>
-  </html>
-  `;
+  </html>`;
 };
