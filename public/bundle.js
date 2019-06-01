@@ -801,6 +801,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 /***/ }),
 
+/***/ "./src/client/assets/images/logo.jpg":
+/*!*******************************************!*\
+  !*** ./src/client/assets/images/logo.jpg ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"logo.jpg\";\n\n//# sourceURL=webpack:///./src/client/assets/images/logo.jpg?");
+
+/***/ }),
+
 /***/ "./src/client/components/LandingPage/LoginBox.js":
 /*!*******************************************************!*\
   !*** ./src/client/components/LandingPage/LoginBox.js ***!
@@ -809,7 +820,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _copy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./copy */ \"./src/client/components/LandingPage/copy.js\");\n\n\n\nvar LoginBox = function LoginBox() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"loginBox\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"irp-loginbox_contents\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n    src: \"/logo.jpg\",\n    width: \"90px\",\n    height: \"90px\",\n    alt: \"logo\"\n  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"p\", null, _copy__WEBPACK_IMPORTED_MODULE_1__[\"default\"].introductory_text), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    style: {\n      marginTop: '10px'\n    }\n  }, \"\\xA9Suman Kumari\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"form\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", {\n    htmlFor: \"email\"\n  }, _copy__WEBPACK_IMPORTED_MODULE_1__[\"default\"].email_header, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    type: \"text\",\n    name: \"name\"\n  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    type: \"submit\",\n    value: \"Continue\"\n  })))));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (LoginBox);\n\n//# sourceURL=webpack:///./src/client/components/LandingPage/LoginBox.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _copy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./copy */ \"./src/client/components/LandingPage/copy.js\");\n/* harmony import */ var _assets_images_logo_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/images/logo.jpg */ \"./src/client/assets/images/logo.jpg\");\n/* harmony import */ var _assets_images_logo_jpg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_images_logo_jpg__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\nvar LoginBox = function LoginBox() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"loginBox\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    className: \"irp-loginbox_contents\"\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"img\", {\n    src: \"/logo.jpg\",\n    width: \"90px\",\n    height: \"90px\",\n    alt: \"logo\"\n  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"p\", null, _copy__WEBPACK_IMPORTED_MODULE_1__[\"default\"].introductory_text), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    style: {\n      marginTop: '10px'\n    }\n  }, \"\\xA9Suman Kumari\"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"form\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"label\", {\n    htmlFor: \"email\"\n  }, _copy__WEBPACK_IMPORTED_MODULE_1__[\"default\"].email_header, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    type: \"text\",\n    name: \"name\"\n  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"input\", {\n    type: \"submit\",\n    value: \"Continue\"\n  })))));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (LoginBox);\n\n//# sourceURL=webpack:///./src/client/components/LandingPage/LoginBox.js?");
 
 /***/ }),
 

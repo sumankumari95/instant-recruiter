@@ -1,5 +1,6 @@
 import React from 'react';
 import copy from './copy';
+import '../../assets/images/logo.jpg';
 
 const LoginBox = () => (
   <div className="loginBox">
