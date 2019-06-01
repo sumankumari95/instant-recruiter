@@ -16,8 +16,9 @@ export default (req, store) => {
 
   return `<html>
     <head>
-        <link rel="stylesheet" type="text/css" href="Main.css" />
-        <title>Instant Recruiter</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="Main.css" />
+      <title>Instant Recruiter</title>
     </head>
     <body>
         <div id="root">${content}</div>
