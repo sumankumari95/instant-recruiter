@@ -11,7 +11,7 @@
 .loginBox {
     margin: auto;
     width: 475px;
-    height: 350px;
+    height: 390px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@
     font-style: italic;
 }
 
-.irp-loginbox_contents input[type="text"] {
+.irp-login_field {
     margin-top: 20px;
     display: block;
     width: 443px;

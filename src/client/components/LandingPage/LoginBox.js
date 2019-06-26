@@ -13,7 +13,8 @@ const LoginBox = () => (
         <form>
           <label htmlFor="email">
             {copy.email_header}
-            <input type="text" name="name" />
+            <input className="irp-login_field" type="text" name="name" placeholder={copy.loginFields_placeholder.email} />
+            <input className="irp-login_field" type="password" name="name" placeholder={copy.loginFields_placeholder.password} />
           </label>
           <input type="submit" value="Continue" />
         </form>
