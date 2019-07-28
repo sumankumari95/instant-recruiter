@@ -22,7 +22,7 @@ const connection = mysql.createPool({
 });
 
 app.get('/', (req, res) => {
-  console.log(path.join(__dirname, '../public/index.html'))
+  res.header('Content-Security-Policy', 'img-src "self"');
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
