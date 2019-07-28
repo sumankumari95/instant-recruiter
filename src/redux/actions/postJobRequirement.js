@@ -23,7 +23,7 @@ export const postTheJob = ({
   jobDesc, location, band, noOfApp, skills, managerId, managerName, managerEmail, managerPhone,
 }) => (dispatch) => {
   dispatch(jobPostStarted());
-  axios.post('http://localhost:4040/postJobDetails', {
+  axios.post('/postJobDetails', {
     jobDesc, location, band, noOfApp, skills, managerId, managerName, managerEmail, managerPhone,
   }).then((res) => {
     if (res.data) { dispatch(jobPostSuccessful(res.data)); }

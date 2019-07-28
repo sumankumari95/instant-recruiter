@@ -21,7 +21,7 @@ const fetchJobPostsSuccessful = jobId => ({
 
 export const fetchJobs = () => (dispatch) => {
   dispatch(fetchJobPostsStarted());
-  axios.get('http://localhost:4040/fetchAllJobPosts').then((res) => {
+  axios.get('/fetchAllJobPosts').then((res) => {
     if (res.data) { dispatch(fetchJobPostsSuccessful(res.data)); }
   }).catch(() => {
     dispatch(fetchJobPostsError());

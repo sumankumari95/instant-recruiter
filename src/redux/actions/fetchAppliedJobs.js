@@ -15,7 +15,7 @@ const fetchAppliedJobsFailure = () => ({
 });
 
 export const fetchAppliedJobs = userId => (dispatch) => {
-  axios.post('http://localhost:4040/fetchAppliedJobs', {
+  axios.post('/fetchAppliedJobs', {
     userId,
   }).then((res) => {
     dispatch(fetchAppliedJobsSuccess(res.data));

@@ -20,7 +20,7 @@ const jobApplySuccessful = jobId => ({
 });
 
 export const applyForJob = ({ jobId, userId }) => (dispatch) => {
-  axios.post('http://localhost:4040/applyForJob', {
+  axios.post('/applyForJob', {
     jobId, userId,
   }).then((res) => {
     if (res.status === 200) dispatch(jobApplySuccessful(jobId));

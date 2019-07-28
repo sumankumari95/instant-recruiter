@@ -32,7 +32,7 @@ const logout = () => ({
 
 export const checkForAuth = ({ email, password }) => (dispatch) => {
   dispatch(authenticationStarted());
-  axios.post('http://localhost:4040/authenticate', {
+  axios.post('/authenticate', {
     email,
     password,
   }).then((res) => {
