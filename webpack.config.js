@@ -10,6 +10,14 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
+    publicPath: '/',
+  },
+  devServer: {
+    port: process.env.PORT || 4000,
+    contentBase: './public',
+    historyApiFallback: true,
+    inline: true,
+    hot: true,
   },
   module: {
     rules: [

@@ -1,20 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { Router } from 'react-router-dom';
+import {
+  createStore, applyMiddleware, combineReducers, compose,
+} from 'redux';
+import { createHashHistory } from 'history';
 import { Provider } from 'react-redux';
+import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
 import Routes from './client/Routes';
-import reducer from './redux/reducers';
+import authenticationReducer from './redux/reducers/authentication';
+import jobPostReducer from './redux/reducers/postJobRequirements';
+import fetchJobsReducer from './redux/reducers/fetchJobPosts';
+import applyJobReducer from './redux/reducers/applyJob';
+import fetchAppliedJobs from './redux/reducers/fetchAppliedJobs';
+
 import './client/index.css';
 
-const store = createStore(reducer, {}, applyMiddleware(thunk));
+const history = createHashHistory();
+// eslint-disable-next-line no-underscore-dangle
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-ReactDOM.hydrate(
+const rootReducer = combineReducers({
+  router: history, authenticationReducer, jobPostReducer, fetchJobsReducer, applyJobReducer, fetchAppliedJobs,
+});
+const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk, routerMiddleware(history))));
+
+
+ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <Router history={history}>
       <Routes />
-    </BrowserRouter>
+    </Router>
   </Provider>,
   document.getElementById('root'),
 );

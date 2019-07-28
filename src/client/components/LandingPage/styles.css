@@ -1,65 +1,71 @@
 .irp-page_header {
-    text-align: center;
-    font-weight: 600;
-    font-size: 60px;
-    background: -webkit-linear-gradient(red, orange);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-weight: 600;
+  font-size: 60px;
+  background: -webkit-linear-gradient(red, orange);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .loginBox {
-    margin: auto;
-    width: 475px;
-    height: 390px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
+  margin: auto;
+  width: 475px;
+  height: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .irp-loginbox_contents {
-    margin: 1em;
+  margin: 1em;
 }
 
-.irp-loginbox_contents img{
-    float: left;
-    margin-right: 10px;
+.irp-loginbox_contents img {
+  float: left;
+  margin-right: 10px;
 }
 
 .irp-loginbox_contents p {
-    font-size: 20px;
-    display: inline;
+  font-size: 20px;
+  display: inline;
 }
 
 .irp-loginbox_contents form {
-    clear: both;
-    margin-top: 70px;
+  clear: both;
+  margin-top: 70px;
 }
 
 .irp-loginbox_contents label {
-    font-size: 25px;
-    font-style: italic;
+  font-size: 25px;
+  font-style: italic;
 }
 
 .irp-login_field {
-    margin-top: 20px;
-    display: block;
-    width: 443px;
-    height: 35px;
-    font-size: 20px;
+  margin-top: 20px;
+  display: block;
+  width: 443px;
+  height: 35px;
+  font-size: 20px;
 }
 
 .irp-loginbox_contents input[type="submit"] {
-    margin-top: 20px;
-    display: block;
-    font-size: 20px;
-    float: right;
-    padding: 10px;
-    background-color: rgb(124, 9, 231);
-    color: white;
-    border: none;
+  margin-top: 20px;
+  display: block;
+  font-size: 20px;
+  float: right;
+  padding: 10px;
+  background-color: rgb(124, 9, 231);
+  color: white;
+  border: none;
 }
 
 .irp-loginbox_contents input[type="submit"]:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 15px !important;
+  font-style: normal;
 }

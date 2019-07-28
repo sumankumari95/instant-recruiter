@@ -1,33 +1,39 @@
 {
   "name": "instant-recruiter",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Internal project recruitment platform",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/server/index.js",
-    "build:client": "webpack --config webpack.config.js --watch",
+    "start": "webpack --config webpack.config.js && webpack-dev-server",
+    "build:client": "webpack --config webpack.config.js",
     "lint": "eslint --ext .js . --fix"
   },
   "author": "Suman Kumari",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "config": "^3.1.0",
+    "connected-react-router": "^6.5.2",
     "express": "^4.17.0",
     "extracted-loader": "^1.0.7",
     "file-loader": "^3.0.1",
+    "history": "^4.9.0",
     "ignore-styles": "^5.0.1",
     "mini-css-extract-plugin": "^0.7.0",
     "nodemon": "^1.19.1",
     "postcss-loader": "^3.0.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
+    "react-router-redux": "^4.0.8",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "style-loader": "^0.23.1",
-    "webpack": "^4.30.0"
+    "webpack": "^4.30.0",
+    "webpack-dev-server": "^3.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

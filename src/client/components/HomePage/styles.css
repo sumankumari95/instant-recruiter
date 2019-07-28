@@ -1,0 +1,115 @@
+#logout {
+  float: right;
+  margin: 2em;
+  width: 12em;
+  padding: 1em;
+  border-radius: 2em;
+}
+
+#managerDashboard {
+  float: right;
+  margin: 2em;
+  width: 12em;
+  padding: 1em;
+  border-radius: 2em;
+}
+
+#employeeDashboard {
+  float: right;
+  margin: 2em;
+  width: 13em !important;
+  padding: 1em;
+  border-radius: 2em;
+}
+
+.container {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 3em;
+}
+
+.infoPane {
+  width: 30%;
+  background-color: white;
+  height: min-content;
+}
+
+.actionPane {
+  width: 65%;
+  background-color: white;
+}
+
+.homePage_container {
+  display: grid;
+}
+
+.profileSection {
+  margin: 20px;
+}
+
+.greeting {
+  margin-top: 2em;
+  line-height: 2;
+}
+
+.profile-contents {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+textarea {
+  height: 150px;
+  width: 80%;
+  resize: none;
+  font-family: inherit;
+  margin-bottom: 3em;
+}
+
+#saveButton {
+  margin-right: 2em;
+  margin-left: 2em;
+}
+@media only screen and (max-width: 1100px) {
+  #saveButton {
+    float: right;
+  }
+}
+
+.skillSetList {
+  margin: 1em;
+}
+
+.skillListButton {
+  padding: 5px;
+  background-color: burlywood;
+  margin: 5px;
+}
+
+.jobpost-input {
+  padding: 8px;
+  border: 1px solid;
+}
+
+.employeee-job-posts {
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid green;
+}
+
+.apply {
+  padding: 10px;
+  border-radius: 2em;
+  background-color: green;
+  color: white;
+}
+
+.apply:disabled {
+  background-color: darkgray;
+}
+
+.error {
+  color: red;
+  font-size: 15px !important;
+  font-style: normal;
+}
