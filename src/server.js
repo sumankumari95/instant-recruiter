@@ -14,11 +14,11 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '../public')));
 
 const connection = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
+  host: 'remotemysql.com',
+  user: 'c65k2kQp1t',
+  password: 'sdt1a57qam',
   insecureAuth: true,
-  database: 'instant_recruiter',
-  password: 'thewinner',
+  database: 'c65k2kQp1t',
 });
 
 app.get('/', (req, res) => {
