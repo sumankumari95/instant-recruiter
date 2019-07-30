@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = state => state;
 
-const ManagerDashboard = (props) => {
-  const managerPosts = props.fetchJobsReducer.jobPosts.filter(post => post.ManagerId === props.authenticationReducer.userData.Id);
+const EmployeeDashboard = (props) => {
+  const appliedJobs = props.fetchJobsReducer.jobPosts.filter(post => props.fetchAppliedJobs.appliedJobs.includes(post.JobId));
+
   return (
     <React.Fragment>
       <div style={{ display: 'block' }}>
@@ -17,12 +18,24 @@ const ManagerDashboard = (props) => {
         </button>
       </div>
       <div className="dashboard_view">
-        {managerPosts.length
-          ? managerPosts.map(post => (
+        {appliedJobs.length
+          ? appliedJobs.map(post => (
             <div key={post.JobId} className="employeee-job-posts">
               <p>
                 <strong>Job reference id: </strong>
                 {post.JobId}
+              </p>
+              <p>
+                <strong>Manager Name: </strong>
+                {post.ManagerName}
+              </p>
+              <p>
+                <strong>Manager Email: </strong>
+                {post.ManagerEmail}
+              </p>
+              <p>
+                <strong>Manager Contact: </strong>
+                {post.ManagerPhone}
               </p>
               <p>
                 <strong>Job Location: </strong>
@@ -41,10 +54,10 @@ const ManagerDashboard = (props) => {
                 {post.Band}
               </p>
             </div>
-          )) : <div> You don&apos;t have any active job posts</div>}
+          )) : <div> You don&apos;t have any active applications</div>}
       </div>
     </React.Fragment>
   );
 };
 
-export default connect(mapStateToProps)(ManagerDashboard);
+export default connect(mapStateToProps)(EmployeeDashboard);

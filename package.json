@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --config webpack.config.js && node ./src/server.js",
-    "build:client": "webpack --config webpack.config.js",
+    "start:local": "nodemon ./src/server.js",
+    "build:client": "webpack --config webpack.config.js --watch",
     "lint": "eslint --ext .js . --fix"
   },
   "author": "Suman Kumari",

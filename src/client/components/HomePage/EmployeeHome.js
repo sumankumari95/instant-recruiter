@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchJobs } from '../../../redux/actions/fetchJobPosts';
 import { applyForJob } from '../../../redux/actions/applyJob';
 import { fetchAppliedJobs } from '../../../redux/actions/fetchAppliedJobs';
 
@@ -12,9 +11,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchJobs: () => {
-    dispatch(fetchJobs());
-  },
   applyForJob: ({ jobId, userId }) => {
     dispatch(applyForJob({ jobId, userId }));
   },
@@ -25,7 +21,6 @@ const mapDispatchToProps = dispatch => ({
 
 const EmployeeHome = (props) => {
   useEffect(() => {
-    props.fetchJobs();
     props.fetchAppliedJob(props.userData.Id);
   }, []);
 

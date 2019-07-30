@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logoutAction } from '../../../redux/actions/authentication';
 import { postTheJob } from '../../../redux/actions/postJobRequirement';
+import { fetchJobs } from '../../../redux/actions/fetchJobPosts';
 import ProfilePane from './ProfilePane';
 import PostJob from './PostJob';
 import EmployeeHome from './EmployeeHome';
@@ -16,6 +17,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => {
     dispatch(logoutAction());
+  },
+  fetchJobs: () => {
+    dispatch(fetchJobs());
   },
   postTheJob: ({
     jobDesc,
@@ -50,6 +54,10 @@ const HomePage = (props) => {
     props.history.push('/');
   };
 
+  useEffect(() => {
+    props.fetchJobs();
+  }, []);
+
   return (
     <div className="homePage_container">
       <div className="logout-button_wrapper">
@@ -58,14 +66,14 @@ const HomePage = (props) => {
         </button>
         {
           props.userData.Role === 'Manager' && (
-          <button type="button" id="managerDashboard">
+          <button type="button" id="managerDashboard" onClick={() => props.history.push('/managerDashboard')}>
           Manager dashboard
           </button>
           )
         }
         {
           props.userData.Role === 'Employee' && (
-          <button type="button" id="employeeDashboard">
+          <button type="button" id="employeeDashboard" onClick={() => props.history.push('/employeeDashboard')}>
           Employee dashboard
           </button>
           )
