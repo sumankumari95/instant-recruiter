@@ -15,7 +15,7 @@ export default (state = initialState, action = { type: 'null' }) => {
         action.payload.forEach(d => jobs.push(d.JobId));
       }
       return {
-        ...initialState,
+        ...state,
         fetchAppliedJobsSuccess: true,
         appliedJobs: jobs,
       };

@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { fetchJobs } from '../../../redux/actions/fetchJobPosts';
+import { fetchAppliedJobs } from '../../../redux/actions/fetchAppliedJobs';
 
 const mapStateToProps = state => state;
 
+const mapDispatchToProps = dispatch => ({
+  fetchJobs: () => {
+    dispatch(fetchJobs());
+  },
+  fetchAppliedJob: (userId) => {
+    dispatch(fetchAppliedJobs(userId));
+  },
+});
+
 const EmployeeDashboard = (props) => {
+  useEffect(() => {
+    props.fetchJobs();
+    props.fetchAppliedJob(props.authenticationReducer.userData.Id);
+  }, []);
   const appliedJobs = props.fetchJobsReducer.jobPosts.filter(post => props.fetchAppliedJobs.appliedJobs.includes(post.JobId));
 
   return (
@@ -60,4 +75,4 @@ const EmployeeDashboard = (props) => {
   );
 };
 
-export default connect(mapStateToProps)(EmployeeDashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(EmployeeDashboard);

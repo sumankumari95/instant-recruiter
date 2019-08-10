@@ -14,6 +14,7 @@ import jobPostReducer from './redux/reducers/postJobRequirements';
 import fetchJobsReducer from './redux/reducers/fetchJobPosts';
 import applyJobReducer from './redux/reducers/applyJob';
 import fetchAppliedJobs from './redux/reducers/fetchAppliedJobs';
+import fetchAppliedUsers from './redux/reducers/fetchAppliedUsers';
 
 import './client/index.css';
 
@@ -22,7 +23,7 @@ const history = createHashHistory();
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-  router: history, authenticationReducer, jobPostReducer, fetchJobsReducer, applyJobReducer, fetchAppliedJobs,
+  router: history, authenticationReducer, jobPostReducer, fetchJobsReducer, applyJobReducer, fetchAppliedJobs, fetchAppliedUsers,
 });
 const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk, routerMiddleware(history))));
 

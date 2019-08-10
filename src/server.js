@@ -55,6 +55,14 @@ app.post('/postJobDetails', (req, res) => {
   });
 });
 
+app.post('/fetchAppliedUsers', (req, res) => {
+  const { userId } = req.body;
+  connection.query(`select * from user_db where Id=${userId}`, (err, result) => {
+    if (err) throw err;
+    res.send(result);
+  });
+});
+
 app.get('/fetchAllJobPosts', (req, res) => {
   connection.query('select * from job_posts', (err, result) => {
     if (err) throw err;
