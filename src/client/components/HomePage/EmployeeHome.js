@@ -102,13 +102,13 @@ const EmployeeHome = (props) => {
               && props.jobApplication.jobsApplied.includes(post.JobId) && (
                 <p style={{ color: 'green', marginTop: '2em' }}>
                   You have been successfully applied for this position. You can
-                  tract the progress in Employee dashboard
+                  track the progress in Employee dashboard
                 </p>
             )}
             {props.appliedJobs.includes(post.JobId) && (
             <p className="error">
                   You have already applied for this position. You can
-                  tract the progress in Employee dashboard
+                  track the progress in Employee dashboard
             </p>
             )}
           </div>

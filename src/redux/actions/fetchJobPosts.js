@@ -19,6 +19,16 @@ const fetchJobPostsSuccessful = jobId => ({
   payload: jobId,
 });
 
+export const deleteJobs = jobId => (dispatch) => {
+  axios.post('/deleteJob', {
+    jobId,
+  }).then((res) => {
+    if (res.data) { dispatch(fetchJobPostsSuccessful(res.data)); }
+  }).catch(() => {
+    dispatch(fetchJobPostsError());
+  });
+};
+
 export const fetchJobs = () => (dispatch) => {
   dispatch(fetchJobPostsStarted());
   axios.get('/fetchAllJobPosts').then((res) => {

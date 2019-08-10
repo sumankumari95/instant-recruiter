@@ -4,7 +4,7 @@ import './styles.css';
 
 const ProfilePane = (props) => {
   const {
-    Title, Name, Age, Role, Band, Sex, Phone, Email, Location, Experience,
+    Title, Name, Age, Role, Band, Sex, Phone, Email, Location, Experience, Skills,
   } = props;
 
   return (
@@ -26,7 +26,12 @@ const ProfilePane = (props) => {
         <p>{`Age:         ${Age}`}</p>
         <p>{`Role:        ${Role}`}</p>
         <p>{`Band:        ${Band}`}</p>
-        <p>{`Sex:         ${Sex}`}</p>
+        <p>{`Gender:      ${Sex}`}</p>
+        {
+          Role === 'Employee' && (
+            <p>{`Skills:      ${Skills.split(',').join(', ')}`}</p>
+          )
+        }
         <p>{`Phone:       ${Phone}`}</p>
         <p>{`Email:       ${Email}`}</p>
         <p>{`Location:    ${Location}`}</p>

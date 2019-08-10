@@ -92,6 +92,17 @@ app.post('/fetchAppliedJobs', (req, res) => {
   });
 });
 
+app.post('/deleteJob', (req, res) => {
+  const { jobId } = req.body;
+  connection.query(`delete from job_posts where JobId=${jobId}`, (err1, result1) => {
+    if (err1) throw err1;
+    connection.query('select * from job_posts', (err2, result2) => {
+      if (err2) throw err2;
+      res.send(result2);
+    });
+  });
+});
+
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
 });

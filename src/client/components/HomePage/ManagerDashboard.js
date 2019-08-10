@@ -1,7 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { deleteJobs } from '../../../redux/actions/fetchJobPosts';
 
 const mapStateToProps = state => state;
+
+const mapDispatchToProps = dispatch => ({
+  deleteTheJob: (jobId) => {
+    dispatch(deleteJobs(jobId));
+  },
+});
 
 const ManagerDashboard = (props) => {
   const managerPosts = props.fetchJobsReducer.jobPosts.filter(post => post.ManagerId === props.authenticationReducer.userData.Id);
@@ -40,6 +47,7 @@ const ManagerDashboard = (props) => {
                 <strong>Expected Band: </strong>
                 {post.Band}
               </p>
+              <button type="button" className="delete-job_button" onClick={() => props.deleteTheJob(post.JobId)}>Delete</button>
             </div>
           )) : <div> You don&apos;t have any active job posts</div>}
       </div>
@@ -47,4 +55,4 @@ const ManagerDashboard = (props) => {
   );
 };
 
-export default connect(mapStateToProps)(ManagerDashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(ManagerDashboard);

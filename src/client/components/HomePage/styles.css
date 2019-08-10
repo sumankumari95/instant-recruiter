@@ -121,3 +121,10 @@ textarea {
   width: 60em;
   display: inline-block;
 }
+
+.delete-job_button {
+  margin: 2em;
+  width: 12em;
+  padding: 1em;
+  border-radius: 2em;
+}
